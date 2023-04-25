@@ -5,31 +5,42 @@
     <title>KOHA Productions</title>
     <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
+<>
     <nav class="navbar">
         <div>
             <a href="#">
                 <img src="images/Logo.png" class="nav-logo" alt="KOHA productions logo"/>
             </a>
         </div>
-        <ul class="nav-list">
+        <ul class="nav-list" id="naviList">
             <li class="list-item">
-                <a href="projects.html">projects.</a>
+                <a class="nav-link" href="projects.html">projects.</a>
             </li>
             <li class="list-item">
-                <a href="people.html">people.</a>
+                <a class="nav-link" href="people.html">people.</a>
             </li>
             <li class="list-item">
-                <a href="about.html">about.</a>
+                <a class="nav-link" href="about.html">about.</a>
             </li>
         </ul>
-        <div class="menu">
+        <div class="menu" id="toggleButton">
             <div class="menu-line"></div>
             <div class="menu-line"></div>
             <div class="menu-line"></div>    
         </div>
     </nav>
 
-    <image src="images/background.png"></image>
+    <div class="img-container">
+        <image src="images/background.png" class="img-back"></image>
+    </div>
+    
 </body>
+<script>
+    const toggleButton = document.getElementById('toggleButton');
+    const naviList = document.getElementById('naviList');
+
+    toggleButton.addEventListener('click', () => {
+        naviList.classList.toggle('active');
+    })
+</script>
 </html>
