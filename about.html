@@ -1,35 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta>
+    <!-- Safari Header colour overide -->
+    <meta name="theme-color" content="#000000">
     <title>KOHA Productions</title>
+
+    <!-- Custom CSS -->
     <link href="style.css" rel="stylesheet" type="text/css"/>
+
+    <!-- JS file -->
+    <script src="nav.js" defer></script>
+
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&display=swap" rel="stylesheet">
+    
+
 </head>
-<body>
-    <nav class="navbar">
+
+<body class="home">
+    <header class="primary-header flex">
+
         <div>
             <a href="#">
-                <img src="images/Logo.png" class="nav-logo" alt="KOHA productions logo"/>
+                <img src="images/Logo.png" class="logo" alt="KOHA productions logo"/>
             </a>
         </div>
-        <ul class="nav-list">
-            <li class="list-item">
-                <a href="projects.html">projects.</a>
-            </li>
-            <li class="list-item">
-                <a href="people.html">people.</a>
-            </li>
-            <li class="list-item">
-                <a href="about.html">about.</a>
-            </li>
-        </ul>
-        <div class="menu">
-            <div class="menu-line"></div>
-            <div class="menu-line"></div>
-            <div class="menu-line"></div>    
-        </div>
-    </nav>
 
-    <image src="images/background.png"></image>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu</span></button>
+
+        <nav class="flex">
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
+                <li class="active">
+                    <a href="projects.html">
+                        <span aria-hidden="true">01</span>PROJECTS
+                    </a>
+                </li>
+                    <li>
+                    <a href="people.html">
+                        <span aria-hidden="true">02</span>PEOPLE
+                    </a>
+                </li>
+                    <li>
+                    <a  href="about.html">
+                        <span aria-hidden="true">03</span>ABOUT
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="mobile-slide-over-background" data-visible="false"></div>
+    <img src="/images/background.png" class="back-img">
 </body>
 </html>

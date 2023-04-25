@@ -1,90 +1,149 @@
+/* Body */
+body {
+    overflow: hidden;
+}
+
+/* Primary Header */
+
+.primary-header {
+    max-height: 85px;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
+}
+
+.logo {
+    height: 45px;
+    margin: 2rem;
+    padding-top: 2px
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.primary-navigation {
+    list-style: none;
+    margin-right: 2rem;
+}
+
+.primary-navigation a{
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: white;
+}
+
+.primary-navigation a > span {
+    font-weight: 700;
+    margin-inline-end: 0.5em;
+}
+
+.primary-navigation a:hover {
+    -webkit-text-stroke-width: 1px;
+}
+
+.primary-navigation a:hover > span {
+    -webkit-text-stroke-width: 0px;
+}
+
+
+
+.back-img {
+    width: 100%;
+}
+
+@media (max-width: 960px) {
+    .primary-navigation {
+        --gap: 1.5em;
+        z-index: 9998;
+        position: fixed;
+        inset: 0 0 0 10%;
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+        transform: translateX(30%);
+        transition: 450ms cubic-bezier(0.77,0,0.18,1);
+        opacity: 0%;
+    
+    }
+
+    .primary-navigation li {
+        position: relative;
+        text-align: left;
+        padding: 0 12em;
+    }
+
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+        opacity: 100%;
+    }
+
+    .mobile-slide-over-background {
+        --gap: 1.5em;
+        width: 960px;
+        z-index: 9997;
+        position: fixed;
+        width: 960px;
+        inset: 0 0 0 10%;
+        background: hsla(0, 0%, 0%, 0.8);
+        -webkit-backdrop-filter: blur(5px); /* Fixes blur for Safari*/
+        backdrop-filter: blur(5px);  /* This line activates blur*/
+
+        clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+        
+        transform: translateX(100%);
+        transition: 350ms cubic-bezier(0.86,0,0.07,1);
+    
+    }
+
+    .mobile-slide-over-background[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        background: url("/icons/hamburger.svg");
+        background-repeat: no-repeat;
+        border: 0;
+        width: 2rem;
+        aspect-ratio: 1;
+        top: 1.6rem;
+        right: 2rem;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url("/icons/close.svg");
+    }
+}
+
+
+
+/* --------------------*/
+/* Utility classes     */
+/* --------------------*/
+
+/* General */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-
-
-li, a {
-    font-size: 20px;
-    font-family: helvetica;
-    color: white;
-    text-decoration: none;
-}
-
- .navbar {
-    background-color: black;
+.flex {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 13px 5% 8px 5%;
+    gap: var(--gap, 3rem);
 }
 
-.imag-back {
-    width: 100%;
-    height:100%;
-}
-.nav-list {
-    list-style: none;
-}
-
-.nav-list {
-    list-style: none;
-}
-
-.nav-list li {
-    display: inline-block;
-    padding: 0px 20px;
-}
-
-.nav-list li:hover {
-    -webkit-text-stroke-width: 1px;
-}
-
-.nav-logo {
-    height: 45px;
-}
-
-.menu {
+.sr-only {
     display: none;
 }
 
-.menu-line {
-    width: 20px;
-    height: 3px;
-    background-color: white;
-    margin-bottom: 4px;
-}
+.resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
+  }
 
-@media all and (max-width: 960px) {
-    .navbar {
-        flex-direction: column;
-        position: relative;
-        height: 73px;
-    }
-    .menu {
-        display: block;
-        position: absolute;
-        right: 27px;
-        top: 27px;
-    }
-    .nav-logo {
-        display: block;
-        position: absolute;
-        left: 27px;
-    }
-    .nav-list{
-        padding-top: 60px;
-        width: 130%;
-    }
-    .nav-list li {
-        display: block;
-        padding: 20px 0px;
-        text-align: center;
-        border-top: 1px solid white;
-        background: rgba(76, 175, 80, 0.3);
-        backdrop-filter: blur(6px);
-    }
-
-} 
