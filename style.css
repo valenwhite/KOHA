@@ -1,11 +1,75 @@
-/* Body */
-body {
+/* CSS CONTENTS
+/* --------------------------
+/* 1. Site Wide CSS
+/* 2. Page Specific CSS
+/* 3. Custom CSS - Other
+
+
+/* 1. Site Wide CSS
+/* --------------------------*/
+
+/* #region - Utility Classes */
+/* --------------------------*/
+
+body { 
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Primary Header */
+main {
+    flex: 1;
+}
 
-.primary-header {
+/* General */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 3rem);
+}
+
+.sr-only {
+    display: none;
+}
+
+.resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
+}
+
+
+/* Fonts */
+
+p {
+    font-family: 'Josefin Sans',sans-serif;
+    line-height: 1.8;
+}
+
+a{ 
+    color: inherit; 
+  }
+  
+  a:visited{
+    color:inherit;
+  }
+  
+  a:hover{
+    color:inherit;
+}
+/* #endregion */
+
+/* #region - Header          */
+/* --------------------------*/
+
+header { 
     max-height: 85px;
     align-items: center;
     justify-content: space-between;
@@ -48,10 +112,25 @@ body {
     -webkit-text-stroke-width: 0px;
 }
 
-
-
-.back-img {
+.header-image img {
     width: 100%;
+}
+
+.header-image-text {
+font-family: 'Josefin Sans',sans-serif;
+font-weight: 700;
+font-style: italic;
+font-size: 2rem; 
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+@media (min-width: 960px) {
+.mobile-slide-over-background {
+    display: none;
+    }
 }
 
 @media (max-width: 960px) {
@@ -63,7 +142,7 @@ body {
         flex-direction: column;
         padding: min(30vh, 10rem) 2em;
         transform: translateX(30%);
-        transition: 450ms cubic-bezier(0.77,0,0.18,1);
+        transition: 350ms cubic-bezier(0.77,0,0.18,1);
         opacity: 0%;
     
     }
@@ -84,7 +163,6 @@ body {
         width: 960px;
         z-index: 9997;
         position: fixed;
-        width: 960px;
         inset: 0 0 0 10%;
         background: hsla(0, 0%, 0%, 0.8);
         -webkit-backdrop-filter: blur(5px); /* Fixes blur for Safari*/
@@ -117,33 +195,77 @@ body {
     .mobile-nav-toggle[aria-expanded="true"] {
         background-image: url("/icons/close.svg");
     }
+
+
 }
+/* #endregion */
 
+/* #region - Sub Header      */
+/* --------------------------*/
 
-
-/* --------------------*/
-/* Utility classes     */
-/* --------------------*/
-
-/* General */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.flex {
-    display: flex;
-    gap: var(--gap, 3rem);
-}
-
-.sr-only {
-    display: none;
-}
-
-.resize-animation-stopper * {
-    animation: none !important;
-    transition: none !important;
+.header-image {
+    width: auto;
+    max-height: 280px;
+    position: relative;
+    text-align: center;
+    color: white;
+    object-fit: cover;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
   }
+  
+  @media (max-width: 960px) {
+    .header-image-text {
+        font-size: 1.3rem; 
+      }
+    
+      .header-image {
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+      }
+  }
+/* #endregion */
+
+/* #region - Footer          */
+/* --------------------------*/
+
+footer {
+    margin-top: 6em;;
+    height: 3em;
+    width:100%;
+    text-align: center;
+}
+/* #endregion */
+
+
+// 2. Page Specific CSS
+//------------------------------
+
+/* #region - About Page      */
+/* --------------------------*/
+
+.about-page {
+    width: 100%;
+}
+
+.about {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding-top: 60px;
+    max-width: 900px;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+@media (max-width: 960px) {
+    .about {
+        max-width: 85%;
+        padding-top: 40px;
+    }
+}
+/* #endregion */
 
