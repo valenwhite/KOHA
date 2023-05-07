@@ -21,13 +21,18 @@
 
 </head>
 
+
 <body>
     <header class="flex">
+=======
+<>
+    <nav class="navbar">
         <div>
             <a href="#">
                 <img src="images/Logo.png" class="logo" alt="KOHA productions logo"/>
             </a>
         </div>
+
 
         <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu</span></button>
 
@@ -59,6 +64,22 @@
         <div class="header-image">
             <img src="images/About.png" class="header-image"></img>
             <div class="header-image-text">aroha mai, aroha atu  //  love received is love given</div>
+=======
+        <ul class="nav-list" id="naviList">
+            <li class="list-item">
+                <a class="nav-link" href="projects.html">projects.</a>
+            </li>
+            <li class="list-item">
+                <a class="nav-link" href="people.html">people.</a>
+            </li>
+            <li class="list-item">
+                <a class="nav-link" href="about.html">about.</a>
+            </li>
+        </ul>
+        <div class="menu" id="toggleButton">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>    
         </div>
         <section class="about">
             <div class="about-text">
@@ -69,6 +90,7 @@
         </section>
     </main>
 
+
     <footer>  
         <div class="footer-copyright">
             <p>@ The KOHA Project 2023</p>
@@ -76,4 +98,17 @@
     </footer>  
 </body>
 
+    <div class="img-container">
+        <image src="images/background.png" class="img-back"></image>
+    </div>
+    
+</body>
+<script>
+    const toggleButton = document.getElementById('toggleButton');
+    const naviList = document.getElementById('naviList');
+
+    toggleButton.addEventListener('click', () => {
+        naviList.classList.toggle('active');
+    })
+</script>
 </html>

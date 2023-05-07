@@ -36,6 +36,7 @@ main {
     gap: var(--gap, 3rem);
 }
 
+
 .sr-only {
     display: none;
 }
@@ -43,6 +44,13 @@ main {
 .resize-animation-stopper * {
     animation: none !important;
     transition: none !important;
+}
+
+li, .nav-link {
+    font-size: 20px;
+    font-family: helvetica;
+    color: white;
+    text-decoration: none;
 }
 
 
@@ -76,6 +84,7 @@ header {
     background: black;
 }
 
+
 .logo {
     height: 45px;
     margin: 2rem;
@@ -87,6 +96,19 @@ header {
 }
 
 .primary-navigation {
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.img-back {
+    width: 100%;
+    align-self: center:
+}
+.nav-list {
     list-style: none;
     margin-right: 2rem;
 }
@@ -133,12 +155,18 @@ transform: translate(-50%, -50%);
     }
 }
 
+
 @media (max-width: 960px) {
     .primary-navigation {
         --gap: 1.5em;
         z-index: 9998;
         position: fixed;
         inset: 0 0 0 10%;
+
+
+
+@media all and (max-width: 960px) {
+    .navbar {
         flex-direction: column;
         padding: min(30vh, 10rem) 2em;
         transform: translateX(30%);
@@ -156,6 +184,15 @@ transform: translate(-50%, -50%);
     .primary-navigation[data-visible="true"] {
         transform: translateX(0%);
         opacity: 100%;
+        height: 71px;
+    }
+    
+    .menu {
+        display: block;
+        position: absolute;
+        right: 47px;
+        top: 27px;
+        cursor: pointer;
     }
 
     .mobile-slide-over-background {
@@ -268,4 +305,43 @@ footer {
     }
 }
 /* #endregion */
+=======
+        left: 47px;
+    }
+    .nav-list{
+        padding-top: 58px; 
+        display: none;
+        width: 130%;
+        
+    }
+    .nav-list li {
+        display: block;
+        padding: 20px 0;
+        text-align: center;
+        border-bottom: 2px solid rgb(0, 0, 0);
+        background: rgba(255, 255, 255, 0.8);
+    }
+    li, .nav-link {
+        font-size: 20px;
+        font-family: helvetica;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+    .active {
+        display: block;
+    }
+} 
+
+@media all and (min-width: 1440px) { 
+    .img-back {
+        width: 1440px;
+    }
+}
+
+@media all and (max-width: 960px) {
+    .img-back {
+        width: 100%;
+    }
+}
+
 
