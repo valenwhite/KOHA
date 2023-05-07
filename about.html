@@ -1,17 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta>
+    <!-- Safari Header colour overide -->
+    <meta name="theme-color" content="#000000">
     <title>KOHA Productions</title>
+
+    <!-- Custom CSS -->
     <link href="style.css" rel="stylesheet" type="text/css"/>
+
+    <!-- JS file -->
+    <script src="nav.js" defer></script>
+
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap" rel="stylesheet">
+
+    
+
 </head>
+
+
+<body>
+    <header class="flex">
+=======
 <>
     <nav class="navbar">
         <div>
             <a href="#">
-                <img src="images/Logo.png" class="nav-logo" alt="KOHA productions logo"/>
+                <img src="images/Logo.png" class="logo" alt="KOHA productions logo"/>
             </a>
         </div>
+
+
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu</span></button>
+
+        <nav class="flex">
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation flex">
+                <li class="active">
+                    <a href="projects.html">
+                        <span aria-hidden="true">01</span>PROJECTS
+                    </a>
+                </li>
+                    <li>
+                    <a href="people.html">
+                        <span aria-hidden="true">02</span>PEOPLE
+                    </a>
+                </li>
+                    <li>
+                    <a  href="about.html">
+                        <span aria-hidden="true">03</span>ABOUT
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="mobile-slide-over-background" data-visible="false"></div>  
+
+    </header>
+
+    <main class="about-page">
+        <div class="header-image">
+            <img src="images/About.png" class="header-image"></img>
+            <div class="header-image-text">aroha mai, aroha atu  //  love received is love given</div>
+=======
         <ul class="nav-list" id="naviList">
             <li class="list-item">
                 <a class="nav-link" href="projects.html">projects.</a>
@@ -28,7 +81,22 @@
             <div class="menu-line"></div>
             <div class="menu-line"></div>    
         </div>
-    </nav>
+        <section class="about">
+            <div class="about-text">
+                <p>KOHA productions was started in 2014 in Tāmaki-makau-rau (Auckland, New Zealand) by husbands Koro Dickinson and Harry McNaughton. KOHA is both a portmanteau of their first names and a Māori word meaning ‘gift’, reflecting the aronga (purpose) of the company: the gift of love, spread through stories.
+                    <br><br>Our stories showcase the beauty, strength and insight of unique and diverse voices. Our work is collaborative and inclusive, characterised by vivid, evocative and unusual storytelling.
+                    <br><br><br><br>For further inquiries, email <a href="mailto:info@koha.co.nz">info@koha.co.nz</a>.</p>
+                </div>
+        </section>
+    </main>
+
+
+    <footer>  
+        <div class="footer-copyright">
+            <p>@ The KOHA Project 2023</p>
+        </div>
+    </footer>  
+</body>
 
     <div class="img-container">
         <image src="images/background.png" class="img-back"></image>
